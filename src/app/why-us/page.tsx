@@ -1,0 +1,18 @@
+import Image from "next/image";
+import Link from "next/link";
+import { CtaStrip } from "@/components/cta-strip";
+import { IconArrowUpRight, IconCheck } from "@/components/icons";
+import { FeatureCard } from "@/components/content-cards";
+import { PageHero } from "@/components/page-hero";
+import { SectionHeading } from "@/components/section-heading";
+import { features } from "@/data/features";
+
+export default function WhyUsPage() {
+  return <main>
+    <PageHero eyebrow="What makes the difference" current="Why us" title={<>A little more <em>human.</em> A lot more intentional.</>} text="Good teaching is not only about covering the material. It is about noticing how a student is meeting it — and knowing what to do next." image="/images/features/concept-learning.jpg" imageAlt="Teacher demonstrating a concept to students" action={{ label: "Meet our approach", href: "/enquiry" }} />
+    <section className="features-section"><div className="shell"><SectionHeading eyebrow="The difference is in the details" title={<>Four ways we help learning <em>stick.</em></>} text="A strong academic foundation is built through a series of small, consistent decisions. These are the ones we make every day." /><div className="card-grid-4">{features.map((feature, index) => <FeatureCard feature={feature} index={index} key={feature.number} />)}</div></div></section>
+    <section className="page-section warm"><div className="shell split-grid"><div className="split-copy"><p className="eyebrow">The mentor effect</p><h2>Students do better when someone is paying <em>attention.</em></h2><p>A mentor does more than explain a chapter. They notice the hesitation before a student gives up, the pattern behind a silly mistake and the moment it is time for a harder question.</p><ul className="numbered-list"><li className="numbered-item"><b>01</b><div><strong>Know the learner</strong><p>Understand the goals, habits and confidence behind the marks.</p></div></li><li className="numbered-item"><b>02</b><div><strong>Make a useful plan</strong><p>Break the next challenge into steps that can actually be taken.</p></div></li><li className="numbered-item"><b>03</b><div><strong>Keep showing up</strong><p>Give feedback that is honest, practical and kind enough to use.</p></div></li></ul><Link href="/about" className="button button-outline">Our teaching philosophy <IconArrowUpRight size={17} /></Link></div><div className="split-image"><Image src="/images/about/teacher-students.jpg" alt="Teacher mentoring a small group of students" fill sizes="(max-width: 760px) 100vw, 50vw" /></div></div></section>
+    <section className="page-section white"><div className="shell"><SectionHeading align="center" eyebrow="A shared standard" title={<>What families can expect from <em>day one.</em></>} /><div className="values-grid"><article className="value-card"><span className="value-number">01</span><h3>Clear communication</h3><p>No surprises. Parents know what students are working on and where support can help.</p></article><article className="value-card"><span className="value-number">02</span><h3>Useful practice</h3><p>Questions are chosen to build understanding, not to fill a page or create noise.</p></article><article className="value-card"><span className="value-number">03</span><h3>Steady ambition</h3><p>We set a high bar while giving every student a realistic way to reach it.</p></article></div></div></section>
+    <CtaStrip title="Want to know if we are the right fit?" text="Come with your questions. We will make space for the honest conversation." />
+  </main>;
+}

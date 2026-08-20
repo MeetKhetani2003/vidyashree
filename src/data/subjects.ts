@@ -1,0 +1,66 @@
+export const subjects = [
+  {
+    slug: "physics",
+    title: "Physics",
+    eyebrow: "Motion · matter · possibility",
+    description: "Turn the invisible into something you can see, test and solve with confidence.",
+    image: "/images/subjects/physics.jpg",
+    accent: "#c8282d",
+    icon: "atom",
+    topics: ["Mechanics", "Electricity & magnetism", "Optics", "Modern physics"],
+  },
+  {
+    slug: "chemistry",
+    title: "Chemistry",
+    eyebrow: "Reactions · patterns · precision",
+    description: "Find the order in every reaction through practical thinking and guided practice.",
+    image: "/images/subjects/chemistry.jpg",
+    accent: "#167878",
+    icon: "flask",
+    topics: ["Physical chemistry", "Organic chemistry", "Inorganic chemistry", "Lab thinking"],
+  },
+  {
+    slug: "biology",
+    title: "Biology",
+    eyebrow: "Life · systems · wonder",
+    description: "Build a connected understanding of life — from the cell to the living world.",
+    image: "/images/subjects/biology.jpg",
+    accent: "#6d8f45",
+    icon: "leaf",
+    topics: ["Cell biology", "Human physiology", "Genetics", "Ecology"],
+  },
+  {
+    slug: "mathematics",
+    title: "Mathematics",
+    eyebrow: "Logic · language · flow",
+    description: "Make complex problems feel approachable with patterns, practice and patient guidance.",
+    image: "/images/subjects/mathematics.jpg",
+    accent: "#b67a25",
+    icon: "calculator",
+    topics: ["Algebra", "Calculus", "Coordinate geometry", "Probability"],
+  },
+];
+
+export const courseTracks = [
+  {
+    title: "Foundation · Class XI",
+    subtitle: "Start with a strong first step",
+    text: "A steady academic rhythm that helps students adapt to +2 science, strengthen fundamentals and discover how they learn best.",
+    points: ["Concept-first classroom sessions", "Weekly guided practice", "Monthly parent progress notes"],
+    href: "/enquiry",
+  },
+  {
+    title: "Mastery · Class XII",
+    subtitle: "Make the final year count",
+    text: "Focused board preparation, exam strategy and personal mentoring to turn two years of work into a confident finish.",
+    points: ["Chapter-wise revision plans", "Board-style answer writing", "Targeted doubt clinics"],
+    href: "/enquiry",
+  },
+  {
+    title: "Bridge · Summer programme",
+    subtitle: "Arrive ready for what is next",
+    text: "A short, purposeful programme for students moving into Class XI who want a head start without losing the joy of learning.",
+    points: ["Maths & science refresh", "Study habits that last", "Small group orientation"],
+    href: "/enquiry",
+  },
+];
