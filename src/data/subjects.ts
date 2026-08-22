@@ -1,15 +1,5 @@
 export const subjects = [
   {
-    slug: "physics",
-    title: "Physics",
-    eyebrow: "Motion · matter · possibility",
-    description: "Turn the invisible into something you can see, test and solve with confidence.",
-    image: "/images/subjects/physics.jpg",
-    accent: "#c8282d",
-    icon: "atom",
-    topics: ["Mechanics", "Electricity & magnetism", "Optics", "Modern physics"],
-  },
-  {
     slug: "chemistry",
     title: "Chemistry",
     eyebrow: "Reactions · patterns · precision",
@@ -18,6 +8,16 @@ export const subjects = [
     accent: "#167878",
     icon: "flask",
     topics: ["Physical chemistry", "Organic chemistry", "Inorganic chemistry", "Lab thinking"],
+  },
+  {
+    slug: "physics",
+    title: "Physics",
+    eyebrow: "Motion · matter · possibility",
+    description: "Turn the invisible into something you can see, test and solve with confidence.",
+    image: "/images/subjects/physics.jpg",
+    accent: "#c8282d",
+    icon: "atom",
+    topics: ["Mechanics", "Electricity & magnetism", "Optics", "Modern physics"],
   },
   {
     slug: "biology",
@@ -30,14 +30,24 @@ export const subjects = [
     topics: ["Cell biology", "Human physiology", "Genetics", "Ecology"],
   },
   {
-    slug: "mathematics",
-    title: "Mathematics",
-    eyebrow: "Logic · language · flow",
-    description: "Make complex problems feel approachable with patterns, practice and patient guidance.",
-    image: "/images/subjects/mathematics.jpg",
-    accent: "#b67a25",
-    icon: "calculator",
-    topics: ["Algebra", "Calculus", "Coordinate geometry", "Probability"],
+    slug: "english",
+    title: "English",
+    eyebrow: "Language · expression · success",
+    description: "Master communication skills essential for academic excellence and future success.",
+    image: "/images/subjects/mathematics.jpg", // Using placeholder image since english might not exist
+    accent: "#4b6584",
+    icon: "book",
+    topics: ["Grammar", "Literature", "Writing skills", "Comprehension"],
+  },
+  {
+    slug: "it",
+    title: "Information Technology",
+    eyebrow: "Logic · code · innovation",
+    description: "Learn the fundamentals of technology and programming to prepare for a digital future.",
+    image: "/images/subjects/mathematics.jpg", // Using placeholder
+    accent: "#3867d6",
+    icon: "award",
+    topics: ["Programming basics", "Web technologies", "Database", "Networking"],
   },
 ];
 

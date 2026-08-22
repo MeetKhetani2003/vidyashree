@@ -10,14 +10,14 @@ export const navigation = [
 export const school = {
   name: "Vidyashree Science Classes",
   shortName: "Vidyashree",
-  location: "Baragada, Bhubaneswar",
-  phone: "+91 94370 21886",
-  phoneHref: "tel:+919437021886",
-  email: "hello@vidyashreescience.in",
-  emailHref: "mailto:hello@vidyashreescience.in",
+  location: "Baragada, Odisha",
+  phone: "9337446584 / 7751967101",
+  phoneHref: "tel:+919337446584",
+  email: "bhismadevdash@gmail.com",
+  emailHref: "mailto:bhismadevdash@gmail.com",
   hours: "Mon – Sat, 7:00 AM – 7:30 PM",
-  address: "Plot 18, Vidyashree Lane, Baragada, Bhubaneswar, Odisha 751018",
-  tagline: "Clarity in every concept. Confidence in every step.",
+  address: "Radha Krishna Temple Baragada ( Odisha )",
+  tagline: "The Best Preparation For Tomorrow Is Doing Your Best Today.",
 };
 
 export const stats = [
