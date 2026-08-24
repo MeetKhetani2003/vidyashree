@@ -34,9 +34,37 @@ export const values = [
 ];
 
 export const testimonials = [
-  { quote: "The biggest change was not just my marks — it was finally feeling capable of solving a new problem on my own.", name: "Aarav Mohanty", detail: "Class XII · 2024 batch" },
-  { quote: "Every doubt was welcomed. The teachers know when to push us and when to slow down and explain again.", name: "Riya Das", detail: "Class XI · Science" },
-  { quote: "We always knew what our daughter was learning and how we could support her at home. That made a real difference.", name: "Mrs. S. Patnaik", detail: "Parent · Class XII" },
+  {
+    name: "Reema Panda",
+    date: "7 Oct 2024",
+    rating: 5.0,
+    reviewCount: 1,
+    status: { text: "Pending Response", type: "pending" },
+    tags: ["Highly specialised", "AC classrooms", "Expert faculty", "+ 1"],
+    quote: "Vidyashree Science Classes offers an excellent experience with clean and AC classrooms. The faculty is highly specialized and expert, providing top-notch coaching for science subjects.",
+    initial: "R",
+    initialBg: "bg-green-600"
+  },
+  {
+    name: "shailesh",
+    date: "5 Oct 2024",
+    rating: 5.0,
+    reviewCount: 1,
+    status: { text: "Responded", type: "responded" },
+    tags: ["Relevant curriculum", "Quality courses", "EMI available", "+ 1"],
+    quote: "I had an excellent interaction with Vidyashree Science Classes, a coaching center that offers quality courses with a relevant curriculum. They do not charge any extra fees and also provide the option for EMI payments. Overall, it was a great experience with this coaching center.",
+    avatar: "/avatars/shailesh.png"
+  },
+  {
+    name: "Rup Chandra Jha",
+    date: "5 Oct 2024",
+    rating: 5.0,
+    reviewCount: 1,
+    status: { text: "Responded", type: "responded" },
+    tags: [],
+    quote: "Excellent Science Coaching In Our Locality. Best Faculties Excellent Coordinator Smart Students... Best Of Wishes....",
+    avatar: "/avatars/rup.png"
+  },
 ];
 
 export const quickLinks = [

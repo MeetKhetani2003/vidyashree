@@ -18,14 +18,14 @@ export default function HomePage() {
           <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-blue-500/20 blur-3xl"></div>
           <div className="absolute bottom-0 left-10 w-72 h-72 rounded-full bg-indigo-500/20 blur-3xl"></div>
         </div>
-        
+
         <div className="shell relative z-10 grid md:grid-cols-2 gap-12 items-center">
           <div className="flex flex-col justify-center">
             <p className="text-yellow-400 font-bold uppercase tracking-widest text-sm mb-4 inline-flex items-center gap-2">
               <span className="w-8 h-px bg-yellow-400"></span> Emitting The Gleam of First Rate Success
             </p>
             <h1 className="text-5xl md:text-6xl font-serif font-bold leading-tight mb-6">
-              Where Concepts <br/><em className="text-yellow-400 not-italic">Become Success</em>.
+              Where Concepts <br /><em className="text-yellow-400 not-italic">Become Success</em>.
             </h1>
             <p className="text-blue-100 text-lg mb-8 max-w-lg">
               For +2 Science (CHSE) | 1st Year & 2nd Year. The best preparation for tomorrow is doing your best today. Join the unique coaching centre in Baragada town.
@@ -38,7 +38,7 @@ export default function HomePage() {
                 <span className="bg-yellow-400/20 text-yellow-400 p-2 rounded-full"><IconPlay size={20} /></span> See how we teach
               </Link>
             </div>
-            
+
             <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 text-center border-t border-white/10 pt-8">
               <div>
                 <div className="text-yellow-400 mb-1 flex justify-center"><IconUsers size={24} /></div>
@@ -58,18 +58,18 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-          
+
           <div className="relative">
-             <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/30 to-purple-600/30 rounded-2xl rotate-3 scale-105 blur-sm"></div>
-             <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
-                <Image src="/images/hero/science-classroom.jpg" alt="Students learning science in a Vidyashree classroom" width={800} height={600} priority className="object-cover w-full h-[500px]" />
-                <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-white">
-                  <div className="border-l-4 border-yellow-400 pl-4">
-                    <p className="font-serif text-xl">Learn Today, Lead Tomorrow.</p>
-                    <p className="text-sm text-gray-300 mt-1 uppercase tracking-wider">Vidyashree · Baragada</p>
-                  </div>
+            <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/30 to-purple-600/30 rounded-2xl rotate-3 scale-105 blur-sm"></div>
+            <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+              <Image src="/images/hero/hero.png" alt="Students learning science in a Vidyashree classroom" width={800} height={600} priority className="object-cover w-full h-[500px]" />
+              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-white">
+                <div className="border-l-4 border-yellow-400 pl-4">
+                  <p className="font-serif text-xl">Learn Today, Lead Tomorrow.</p>
+                  <p className="text-sm text-gray-300 mt-1 uppercase tracking-wider">Vidyashree · Baragada</p>
                 </div>
-             </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -80,7 +80,7 @@ export default function HomePage() {
         <div className="shell grid md:grid-cols-2 gap-16 items-center">
           <div>
             <SectionHeading eyebrow="Our Core Philosophy" title={<>Your Success is our <em>Mission</em>.</>} />
-            
+
             <div className="mt-8 space-y-8">
               <div className="bg-blue-50/50 p-6 rounded-xl border border-blue-100 relative overflow-hidden group hover:shadow-md transition-shadow">
                 <div className="absolute top-0 left-0 w-1.5 h-full bg-blue-600"></div>
@@ -91,7 +91,7 @@ export default function HomePage() {
                   To provide quality education, expert guidance, and an inspiring learning environment that empowers students to achieve academic excellence and realize their full potential.
                 </p>
               </div>
-              
+
               <div className="bg-indigo-50/50 p-6 rounded-xl border border-indigo-100 relative overflow-hidden group hover:shadow-md transition-shadow">
                 <div className="absolute top-0 left-0 w-1.5 h-full bg-indigo-600"></div>
                 <h3 className="text-xl font-bold text-indigo-950 mb-3 flex items-center gap-2">
@@ -103,11 +103,11 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-          
+
           <div className="relative">
-             <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
-                <Image src="/images/about/teacher-students.jpg" alt="Mentoring students" fill className="object-cover" />
-             </div>
+            <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
+              <Image src="/images/about/teacher-students.jpg" alt="Mentoring students" fill className="object-cover" />
+            </div>
           </div>
         </div>
       </section>
@@ -122,7 +122,7 @@ export default function HomePage() {
               <div className="md:col-span-3 p-10 md:p-14 flex flex-col justify-center">
                 <p className="text-red-600 font-bold uppercase tracking-widest text-sm mb-4">Message from the Desk</p>
                 <h2 className="text-3xl font-serif font-bold text-blue-950 mb-6">Director’s Message to Students</h2>
-                
+
                 <div className="prose prose-lg text-gray-600 mb-8 space-y-4">
                   <p><strong>Dear Students,</strong></p>
                   <p>Always dream big and believe in your abilities. Success comes through discipline, dedication, hard work, and consistency.</p>
@@ -130,7 +130,7 @@ export default function HomePage() {
                   <p className="text-center font-bold text-blue-900 text-xl py-4 italic">✨ “Your Dream • Our Guidance • Your Success” ✨</p>
                   <p>Let us learn together, grow together, and achieve greatness together. With best wishes for your bright and successful future.</p>
                 </div>
-                
+
                 <div className="mt-auto border-t border-slate-100 pt-6">
                   <p className="font-bold text-xl text-blue-950">Mr. Bhismadev Dash</p>
                   <p className="text-gray-500 uppercase tracking-wide text-sm mt-1">Founder / Director of VSC</p>
@@ -153,7 +153,7 @@ export default function HomePage() {
         <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
         <div className="shell relative z-10">
           <SectionHeading align="center" eyebrow="In their own words" title={<>What changes when learning <em>clicks.</em></>} />
-          
+
           <TestimonialCarousel testimonials={testimonials} />
         </div>
       </section>

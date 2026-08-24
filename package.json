@@ -9,6 +9,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "lucide-react": "^1.33.0",
     "mongodb": "^7.5.0",
     "mongoose": "^9.9.3",
     "next": "16.2.6",

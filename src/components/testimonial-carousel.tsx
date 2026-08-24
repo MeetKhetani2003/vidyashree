@@ -1,12 +1,21 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import Image from "next/image";
+import { Star } from "lucide-react";
 import { IconArrowRight } from "@/components/icons";
 
 type Testimonial = {
-  quote: string;
   name: string;
-  detail: string;
+  date: string;
+  rating: number;
+  reviewCount: number;
+  status: { text: string; type: string };
+  tags: string[];
+  quote: string;
+  avatar?: string;
+  initial?: string;
+  initialBg?: string;
 };
 
 export function TestimonialCarousel({ testimonials }: { testimonials: Testimonial[] }) {
@@ -29,42 +38,78 @@ export function TestimonialCarousel({ testimonials }: { testimonials: Testimonia
 
   return (
     <div 
-      className="relative max-w-4xl mx-auto mt-16"
+      className="relative max-w-2xl mx-auto mt-16"
       onMouseEnter={() => setIsAutoPlaying(false)}
       onMouseLeave={() => setIsAutoPlaying(true)}
     >
-      <div className="overflow-hidden relative rounded-2xl bg-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 p-8 md:p-14 min-h-[300px] flex items-center justify-center">
-        <div className="absolute top-8 left-8 text-red-100">
-          <svg width="48" height="36" viewBox="0 0 32 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9.35824 24C13.8824 24 16 20.3019 16 14.8113V0H0V14.5912C0 19.9874 2.82353 24 9.35824 24ZM25.3582 24C29.8824 24 32 20.3019 32 14.8113V0H16V14.5912C16 19.9874 18.8235 24 25.3582 24Z"/>
-          </svg>
-        </div>
-        
+      <div className="overflow-hidden relative pb-6">
         <div 
           className="flex transition-transform duration-700 ease-in-out w-full"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
-          {testimonials.map((testimonial) => (
-            <div key={testimonial.name} className="w-full flex-shrink-0 px-4 md:px-12 flex flex-col justify-center items-center text-center">
-              <blockquote className="text-slate-700 text-xl md:text-2xl leading-relaxed mb-8 font-serif z-10">
-                “{testimonial.quote}”
-              </blockquote>
-              <cite className="not-italic flex flex-col items-center gap-3">
-                <div className="w-14 h-14 bg-gradient-to-br from-red-100 to-red-50 text-red-600 font-bold rounded-full flex items-center justify-center text-2xl font-serif border border-red-100 shadow-sm">
-                  {testimonial.name.charAt(0)}
+          {testimonials.map((testimonial, idx) => (
+            <div key={idx} className="w-full flex-shrink-0 px-2 md:px-4">
+              <div className="bg-white p-6 rounded-lg shadow-sm border border-slate-200 flex flex-col gap-4 h-full min-h-[220px]">
+                <div className="flex justify-between items-start">
+                  <div className="flex items-center gap-4">
+                    {testimonial.avatar ? (
+                      <div className="w-12 h-12 rounded-lg overflow-hidden flex-shrink-0 bg-slate-100 relative">
+                         <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-emerald-400 opacity-50"></div>
+                      </div>
+                    ) : (
+                      <div className={`w-12 h-12 rounded-lg flex items-center justify-center text-white text-xl flex-shrink-0 ${testimonial.initialBg || 'bg-green-600'}`}>
+                        {testimonial.initial || testimonial.name.charAt(0)}
+                      </div>
+                    )}
+                    
+                    <div className="flex flex-col">
+                      <h4 className="text-slate-900 font-medium text-lg leading-tight">{testimonial.name}</h4>
+                      <span className="text-slate-500 text-sm">{testimonial.reviewCount} reviews</span>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col items-end gap-2">
+                    <div className="flex items-center gap-2">
+                      <span className="text-slate-400 text-sm">{testimonial.date}</span>
+                      <span className="text-slate-400 text-sm">•</span>
+                      <div className="bg-green-700 text-white text-xs font-bold px-1.5 py-0.5 rounded flex items-center gap-1">
+                        {testimonial.rating.toFixed(1)} <Star size={10} fill="currentColor" strokeWidth={0} />
+                      </div>
+                    </div>
+                    
+                    {testimonial.status.type === 'pending' ? (
+                      <div className="bg-gradient-to-r from-red-500 to-red-600 text-white text-[10px] font-semibold px-2 py-0.5 rounded-sm">
+                        {testimonial.status.text}
+                      </div>
+                    ) : (
+                      <div className="bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-[10px] font-semibold px-2 py-0.5 rounded-sm">
+                        {testimonial.status.text}
+                      </div>
+                    )}
+                  </div>
                 </div>
-                <div>
-                  <strong className="block text-slate-900 font-bold text-lg">{testimonial.name}</strong>
-                  <span className="text-xs text-slate-500 uppercase tracking-widest font-semibold mt-1 block">{testimonial.detail}</span>
-                </div>
-              </cite>
+
+                {testimonial.tags && testimonial.tags.length > 0 && (
+                  <div className="flex flex-wrap gap-2 mt-1">
+                    {testimonial.tags.map((tag, i) => (
+                      <span key={i} className="inline-flex items-center gap-1 px-3 py-1 rounded-full border border-slate-200 text-slate-600 text-sm bg-white">
+                        {tag !== '+ 1' && <span className="text-green-500 text-xs">👍</span>} {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+
+                <p className="text-slate-700 mt-2 text-base leading-relaxed line-clamp-4">
+                  {testimonial.quote}
+                </p>
+              </div>
             </div>
           ))}
         </div>
       </div>
 
       {/* Navigation Controls */}
-      <div className="flex justify-center items-center gap-6 mt-8">
+      <div className="flex justify-center items-center gap-6 mt-6">
         <button 
           onClick={prev}
           className="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:bg-slate-100 hover:text-slate-700 transition-colors rotate-180"
