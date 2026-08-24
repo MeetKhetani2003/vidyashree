@@ -5,6 +5,7 @@ import { IconArrowRight, IconArrowUpRight, IconAward, IconBook, IconCheck, IconP
 import { SectionHeading } from "@/components/section-heading";
 import { StatBand } from "@/components/stat-band";
 import { SubjectCard } from "@/components/content-cards";
+import { TestimonialCarousel } from "@/components/testimonial-carousel";
 import { courseTracks } from "@/data/subjects";
 import { subjects } from "@/data/subjects";
 import { testimonials } from "@/data/site";
@@ -148,7 +149,14 @@ export default function HomePage() {
         <div className="shell"><SectionHeading eyebrow="The science desk" title={<>Our Academic <em>Offerings.</em></>} text="Strong fundamentals are built one honest question at a time. Explore the subjects at the heart of our +2 Science programme." /><div className="subject-grid">{subjects.map((subject) => <SubjectCard key={subject.slug} subject={subject} />)}</div><div style={{ textAlign: "center", marginTop: "44px" }}><Link href="/subjects" className="text-button">See our subject approach <IconArrowUpRight size={16} /></Link></div></div>
       </section>
 
-      <section className="testimonials bg-slate-50"><div className="shell"><SectionHeading align="center" eyebrow="In their own words" title={<>What changes when learning <em>clicks.</em></>} /><div className="testimonial-grid">{testimonials.map((testimonial) => <figure className="testimonial-card bg-white shadow-sm" key={testimonial.name}><blockquote>“{testimonial.quote}”</blockquote><cite>{testimonial.name}<span>{testimonial.detail}</span></cite></figure>)}</div></div></section>
+      <section className="testimonials bg-slate-50 py-24 relative overflow-hidden">
+        <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+        <div className="shell relative z-10">
+          <SectionHeading align="center" eyebrow="In their own words" title={<>What changes when learning <em>clicks.</em></>} />
+          
+          <TestimonialCarousel testimonials={testimonials} />
+        </div>
+      </section>
       <CtaStrip title="Ready to find a clearer way forward?" text="Tell us where the student is today. We’ll help you understand what the next step could look like." />
     </main>
   );

@@ -51,7 +51,7 @@ export default function GalleryPage() {
 
   return (
     <main>
-      <PageHero eyebrow="A glimpse of the everyday" current="Gallery" title={<>The little moments that make a <em>place.</em></>} text="A quiet desk. A difficult problem finally solved. A room full of questions. This is the rhythm of learning at Vidyashree." image="/images/gallery/students-01.jpg" imageAlt="Students studying together in a bright room" />
+      <PageHero eyebrow="A glimpse of the everyday" current="Gallery" title={<>The little moments that make a <em>place.</em></>} text="A quiet desk. A difficult problem finally solved. A room full of questions. This is the rhythm of learning at Vidyashree." image="/images/gallery/classroom-01.jpg" imageAlt="Students studying together in a bright room" />
       
       <section className="page-section">
         <div className="shell">

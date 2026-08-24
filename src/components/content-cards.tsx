@@ -32,9 +32,18 @@ export function SubjectCard({ subject }: { subject: Subject }) {
 
 export function FeatureCard({ feature, index = 0 }: { feature: Feature; index?: number }) {
   return (
-    <article className={`feature-card ${index % 2 === 1 ? "feature-card-offset" : ""}`}>
-      <div className="feature-image"><Image src={feature.image} alt={feature.title} fill sizes="(max-width: 800px) 100vw, 25vw" /></div>
-      <div className="feature-body"><div className="feature-number">{feature.number}</div><p className="feature-tag">{feature.tag}</p><h3>{feature.title}</h3><p>{feature.text}</p></div>
+    <article className={`group bg-white rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 transition-all duration-300 hover:shadow-[0_15px_40px_rgb(0,0,0,0.08)] hover:-translate-y-1 ${index % 2 === 1 ? "md:mt-6" : ""}`}>
+      <div className="relative h-56 overflow-hidden">
+        <Image src={feature.image} alt={feature.title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width: 800px) 100vw, 33vw" />
+        <div className="absolute -bottom-5 right-6 bg-red-600 text-white font-serif text-lg w-12 h-12 flex items-center justify-center rounded-full border-4 border-white shadow-md z-10">
+          {feature.number}
+        </div>
+      </div>
+      <div className="p-8 pt-10 relative">
+        <p className="text-red-600 text-[10px] font-extrabold uppercase tracking-widest mb-3">{feature.tag}</p>
+        <h3 className="text-slate-900 font-serif text-xl font-bold mb-3">{feature.title}</h3>
+        <p className="text-slate-500 text-sm leading-relaxed">{feature.text}</p>
+      </div>
     </article>
   );
 }
