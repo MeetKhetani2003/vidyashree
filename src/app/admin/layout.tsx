@@ -30,6 +30,9 @@ export default function AdminLayout({
           <Link href="/admin/gallery" className="block py-2 px-4 rounded text-blue-100 hover:text-white transition-colors border-l-2 border-transparent hover:border-yellow-400 hover:bg-slate-800">
             Gallery Management
           </Link>
+          <Link href="/admin/inquiries" className="block py-2 px-4 rounded text-blue-100 hover:text-white transition-colors border-l-2 border-transparent hover:border-yellow-400 hover:bg-slate-800">
+            Inquiries
+          </Link>
           <div className="mt-8 pt-6 border-t border-slate-700/50 space-y-2">
             <Link href="/" className="block py-2 px-4 text-slate-400 hover:text-white transition-colors flex items-center gap-2 text-sm">
               Back to Website <IconArrowRight size={14} />

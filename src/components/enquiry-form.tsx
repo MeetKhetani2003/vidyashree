@@ -10,9 +10,39 @@ export function EnquiryForm() {
   const [submitted, setSubmitted] = useState(false);
 
   const update = (key: keyof typeof initialForm, value: string) => setForm((current) => ({ ...current, [key]: value }));
-  const submit = (event: FormEvent<HTMLFormElement>) => {
+  const submit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setSubmitted(true);
+    try {
+      const response = await fetch("/api/inquiries", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+
+        // Redirect to WhatsApp
+        const phoneNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "919876543210";
+        const text = `New Inquiry from ${form.student}:
+Parent: ${form.parent}
+Mobile: ${form.mobile}
+Email: ${form.email}
+Class: ${form.className}
+Stream: ${form.stream}
+Message: ${form.message}`;
+
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
+        window.open(whatsappUrl, "_blank");
+      } else {
+        alert("There was an error submitting your enquiry. Please try again.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("An error occurred. Please try again.");
+    }
   };
 
   if (submitted) {
