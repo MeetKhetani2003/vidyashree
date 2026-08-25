@@ -76,13 +76,8 @@ export default async function HomePage() {
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/30 to-purple-600/30 rounded-2xl rotate-3 scale-105 blur-sm"></div>
             <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
-              <Image src={heroImage} alt="Students learning science in a Vidyashree classroom" width={800} height={600} priority className="object-cover w-full h-[800px]" />
-              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-white">
-                <div className="border-l-4 border-yellow-400 pl-4">
-                  <p className="font-serif text-xl">Learn Today, Lead Tomorrow.</p>
-                  <p className="text-sm text-gray-300 mt-1 uppercase tracking-wider">Vidyashree · Baragada</p>
-                </div>
-              </div>
+              <Image src={heroImage} alt="Students learning science in a Vidyashree classroom" width={800} height={600} priority className="object-cover aspect-auto" />
+
             </div>
           </div>
         </div>
