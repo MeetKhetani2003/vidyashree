@@ -10,7 +10,21 @@ import { courseTracks } from "@/data/subjects";
 import { subjects } from "@/data/subjects";
 import { testimonials } from "@/data/site";
 
-export default function HomePage() {
+import connectDB from "@/lib/mongodb";
+import { PageSection } from "@/models/PageSection";
+
+export default async function HomePage() {
+  await connectDB();
+  const sections = await PageSection.find({ pageSlug: "home", isHidden: false }).lean();
+
+  const heroSection = sections.find((s: any) => s.type === "hero");
+  const missionSection = sections.find((s: any) => s.type === "mission-vision");
+  const directorSection = sections.find((s: any) => s.type === "director-message");
+
+  const heroImage = heroSection?.gridFsId ? `/api/images/${heroSection.gridFsId}` : heroSection?.imageUrl || "/images/hero/hero.png";
+  const missionImage = missionSection?.gridFsId ? `/api/images/${missionSection.gridFsId}` : missionSection?.imageUrl || "/images/about/teacher-students.jpg";
+  const directorImage = directorSection?.gridFsId ? `/api/images/${directorSection.gridFsId}` : directorSection?.imageUrl || "/directorimage.png";
+
   return (
     <main>
       <section className="relative overflow-hidden bg-gradient-to-br from-blue-950 via-blue-900 to-indigo-950 text-white pt-24 pb-32">
@@ -62,7 +76,7 @@ export default function HomePage() {
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/30 to-purple-600/30 rounded-2xl rotate-3 scale-105 blur-sm"></div>
             <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
-              <Image src="/images/hero/hero.png" alt="Students learning science in a Vidyashree classroom" width={800} height={600} priority className="object-cover w-full h-[500px]" />
+              <Image src={heroImage} alt="Students learning science in a Vidyashree classroom" width={800} height={600} priority className="object-cover w-full h-[800px]" />
               <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-white">
                 <div className="border-l-4 border-yellow-400 pl-4">
                   <p className="font-serif text-xl">Learn Today, Lead Tomorrow.</p>
@@ -105,8 +119,8 @@ export default function HomePage() {
           </div>
 
           <div className="relative">
-            <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
-              <Image src="/images/about/teacher-students.jpg" alt="Mentoring students" fill className="object-cover" />
+            <div className="aspect-[12/18] rounded-2xl overflow-hidden shadow-xl">
+              <Image src={missionImage} alt="Mentoring students" fill className="object-cover" />
             </div>
           </div>
         </div>
@@ -117,7 +131,7 @@ export default function HomePage() {
           <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100">
             <div className="grid md:grid-cols-5 items-stretch">
               <div className="md:col-span-2 relative min-h-[400px]">
-                <Image src="/directorimage.png" alt="Mr. Bhismadev Dash, Founder / Director" fill className="object-cover object-top" />
+                <Image src={directorImage} alt="Mr. Bhismadev Dash, Founder / Director" fill className="object-cover object-top" />
               </div>
               <div className="md:col-span-3 p-10 md:p-14 flex flex-col justify-center">
                 <p className="text-red-600 font-bold uppercase tracking-widest text-sm mb-4">Message from the Desk</p>
