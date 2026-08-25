@@ -26,7 +26,7 @@ export function SiteHeader() {
         <div className="shell header-inner">
           <Link href="/" className="brand" onClick={() => setOpen(false)} aria-label="Vidyashree Science Classes home">
             <Image src="/logo.png" alt="Vidyashree Science Classes logo" width={72} height={72} className="brand-logo" priority />
-            <span className="brand-copy"><strong>Vidyashree</strong><small>Science Classes</small></span>
+            <span className="brand-copy"><strong className="uppercase">Vidyashree</strong><small>Science Classes</small></span>
           </Link>
           <nav className="desktop-nav" aria-label="Main navigation">
             {navigation.map((item) => (
